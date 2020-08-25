@@ -29,7 +29,7 @@ class EncodeColumns(BaseEstimator, TransformerMixin):
         # Primeiro realizamos a cópia do dataframe 'X' de entrada
         data = X.copy()
 
-        for c in columns:
+        for c in self.columns:
             data[c] = data[c].astype('category').cat.codes
 
         return data
